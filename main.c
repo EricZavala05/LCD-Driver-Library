@@ -11,12 +11,6 @@
 #include "LCD.h"
 
 
-typedef enum 
-{
-	Open, 
-	Closed
-}State; 
-
 int main(void)
 {
 	RCC->AHB1ENR |= (1 << 1);
@@ -26,7 +20,7 @@ int main(void)
 	LCDInitDisplay();
 	
 	
-	
+	// making pacman character 
 	LCDSendCommand(0x40);
 	LCDSendCharacter(0x07);
 	LCDSendCharacter(0x08);
@@ -46,6 +40,7 @@ int main(void)
 	LCDSendCharacter(0x00);
 	LCDSendCharacter(0x00);
 	
+	// making pacman ghost character
 	LCDSendCharacter(0x0E);
 	LCDSendCharacter(0x1F);
 	LCDSendCharacter(0x15);
